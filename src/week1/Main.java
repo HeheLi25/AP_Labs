@@ -27,10 +27,10 @@ public class Main {
 //			System.out.println();
 			
 			ArrayList<CipherString> c2 = new ArrayList();
-			c2.add(new Vignere("WINTER"));
-			c2.add(new Mono("WINTER"));
-			System.out.println(c2.get(0).encode("SUMMER"));	
-			System.out.println(c2.get(1).encode("SUMMER"));		
+			c2.add(new Vignere("SPRING"));
+			c2.add(new Mono("SPRING"));
+			System.out.println(c2.get(0).encode(message));	
+			System.out.println(c2.get(1).encode(message));		
 		} catch (BadKeywordException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
