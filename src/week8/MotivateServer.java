@@ -46,6 +46,7 @@ public class MotivateServer{
 				PrintWriter out = new PrintWriter(socket.getOutputStream(),true);
 				ArrayList<String> q = QuoteLoader.loadQuotes("quotes.txt");
 	            Scanner reader = new Scanner(socket.getInputStream());
+			//	while (true) {
 					while (reader.hasNextLine()) {
 						String input = reader.nextLine();
 						
@@ -55,22 +56,23 @@ public class MotivateServer{
 							int i = r.nextInt(q.size());
 							String s = q.get(i);
 							out.println(s);
-						} else if (input.startsWith("ADD QUOTE:")) {
+						} else if (input.length()>9 && input.substring(0, 9).equals("ADDQUOTE:")) {
 							//System.out.println(input);
-							String[] newQuote = input.split(":");
-							System.out.println(newQuote[1]);
+							String newQuote = input.substring(9);
+							System.out.println(newQuote);
 //							while(true) {
 //								try {newQuote = newQuote + reader.nextLine();}
 //								catch(Exception e) {break;}
 //							}
-							System.out.println(newQuote[1]);
-							QuoteLoader.writeQuote(newQuote[1]);
+							System.out.println(newQuote);
+							QuoteLoader.writeQuote(newQuote);
 							out.println("Success.");
 						} else {
 							out.println("Error.");
 						}
 						//out.flush();
 					}
+			//	}
 //				while(true) {
 //					Random r = new Random();
 //					int i = r.nextInt(q.size());

@@ -13,7 +13,7 @@ public class MotivateClient {
             Scanner reader = new Scanner(server.getInputStream());
             Scanner s = new Scanner(System.in);
             while(s.hasNextLine()) {
-            	String str = s.next();
+            	String str = s.nextLine();
             	PrintWriter writer = new PrintWriter(server.getOutputStream());
             	writer.println(str);
             	//System.out.println(str);
