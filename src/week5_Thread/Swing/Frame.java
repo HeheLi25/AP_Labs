@@ -82,6 +82,7 @@ public class Frame extends JFrame implements ActionListener{
 		}
 		protected void process(List<Integer> counts) {
 			int lastVal = counts.get(counts.size()-1);
+			System.out.println(lastVal);
 			countText.setText(String.format("%d",lastVal));
 		}
 	}
