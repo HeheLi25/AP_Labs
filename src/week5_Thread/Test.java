@@ -61,12 +61,12 @@ public class Test {
 		
 		//------------------------------------------------------//
 		
-//		SharedDouble sd = new SharedDouble();
-//		sd.setD(0.0);
-		SharedDouble2 sd = new SharedDouble2(0.0);
+		SharedDouble sd = new SharedDouble();
+		sd.setD(0.0);
+//		SharedDouble2 sd = new SharedDouble2(0.0);
 		for(int i = 0; i < 100; i++) {
-//			FindMax2 fm = new FindMax2(randArray[i],sd);
-			FindMax3 fm = new FindMax3(randArray[i],sd);
+			FindMax2 fm = new FindMax2(randArray[i],sd);
+//			FindMax3 fm = new FindMax3(randArray[i],sd);
 			Thread t = new Thread(fm);
 			t.start();
 		}
